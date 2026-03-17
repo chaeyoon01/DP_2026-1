@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BookShelf implements Iterable<Book> {
-    private List<Book> books;
+    private List<Book> books;   // 인터페이스라는게 무슨말이야 
 
     public BookShelf(int initialsize) {
         this.books = new ArrayList<>(initialsize);
