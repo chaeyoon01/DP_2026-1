@@ -4,34 +4,46 @@ import java.util.Iterator;
 
 public class Main{
     public static void main(String[] args){
-        // 책 테스트
-        Book book = new Book("Java Programming");
-        System.out.println("Book name: " + book.getName());
-
-        // 책장 테스트
-        BookShelf bookShelf=new BookShelf(5);
-        bookShelf.appendBook(new Book("Java Programming"));
-        bookShelf.appendBook(new Book("Design Patterns"));
-        bookShelf.appendBook(new Book("Effective Java"));
+        // 책장
+        BookShelf bookShelf=new BookShelf(10);
+        bookShelf.appendBook(new Book("클린코드", "기술", 2008, 30000));
+        bookShelf.appendBook(new Book("해리포터와 마법사의 돌", "소설", 1997, 15000));
+        bookShelf.appendBook(new Book("사피엔스", "역사", 2011, 18000));
+        bookShelf.appendBook(new Book("이펙티브 자바", "기술", 2018, 36000));
+        bookShelf.appendBook(new Book("객체지향의 사실과 오해", "기술", 2015, 20000));
+        bookShelf.appendBook(new Book("레미제라블", "소설", 1862, 12000));
+        bookShelf.appendBook(new Book("총균쇠", "역사", 1997, 22000));
+        bookShelf.appendBook(new Book("리팩터링", "기술", 2018, 34000));
+        bookShelf.appendBook(new Book("로마인 이야기", "역사", 1992, 25000));
+        bookShelf.appendBook(new Book("어린왕자", "소설", 1943, 9000));
 
         // 책장에 있는 책 출력
+        // 방법1 : Iterator를 통해서 '소설' 장르의 책을 꺼내오는 방법
+        System.out.println("***소설 장르의 책***");
 
-        // 방법1 : 클라이언트가 책꽂이에 직접 접근하여 책을 가져오는 방법
-        for (int i=0;i<bookShelf.getLength();i++){
-            System.out.println("Book "+(i+1)+":"+bookShelf.getBookAt(i).getName());
-        }
+        Iterator<Book> it=bookShelf.iteratorByGenre("소설");
 
-        // 방법2 : Iterator를 통해서 책꽂이의 책을 꺼내오는 방법
-        // Iterator를 얻어옴
-        Iterator<Book> it=bookShelf.iterator();
         while(it.hasNext()){
-            System.out.println("Book: " + it.next().getName());
+            Book book=it.next();
+            System.out.print("Book: " + book.getName());
+            System.out.print(", " + book.getGenre());
+            System.out.print(", " + book.getYear());
+            System.out.println(", " + book.getPrice());
         }
 
-        // 확장 for문을 이용한 방법
-        // 이게 가능한 이유는 BookShelf가 Iterable 인터페이스를 구현했기 때문
-        for(Book b: bookShelf){ // 형식 : for(요소타입의 변수명 : 컬렉션) {...}
-            System.out.println("Book: " + b.getName());
+        System.out.println();
+
+        // 방법2 : Iterator를 통해서 출판연도 역순으로 책을 꺼내오는 방법
+        System.out.println("***출판연도 역순 출력***");
+
+        Iterator<Book> it2=bookShelf.iteratorByYear();
+
+        while(it2.hasNext()){
+            Book book=it2.next();
+            System.out.print("Book: " + book.getName());
+            System.out.print(", " + book.getGenre());
+            System.out.print(", " + book.getYear());
+            System.out.println(", " + book.getPrice());
         }
     }
 }

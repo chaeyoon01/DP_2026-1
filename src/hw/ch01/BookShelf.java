@@ -16,7 +16,7 @@ public class BookShelf implements Iterable<Book> {
     }
 
     public void appendBook(Book book) { // 책을 추가하는 메소드
-        this.books[last]=book;
+        this.books[last]=book;  
         last++;
     }
 
@@ -27,5 +27,13 @@ public class BookShelf implements Iterable<Book> {
     @Override
     public Iterator<Book> iterator() { // 현재 책꽂이의 Iterater를 생성해서 반환하는 메소드
         return new BookShelfIterator(this); // this : 현재 객체(책꽂이)를 가리킴
+    }
+
+    public Iterator<Book> iteratorByGenre(String genre) { // 특정 장르의 책을 꺼내오는 Iterator를 반환하는 메소드
+        return new IteratorByGenre(this, genre);
+    }
+
+    public Iterator<Book> iteratorByYear() { // 출판연도 역순으로 책을 꺼내오는 Iterator를 반환하는 메소드
+        return new IteratorByYear(this);
     }
 }
