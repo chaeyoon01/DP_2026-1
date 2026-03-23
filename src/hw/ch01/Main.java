@@ -4,6 +4,9 @@ import java.util.Iterator;
 
 public class Main{
     public static void main(String[] args){
+        System.out.println("20240936 신채윤");
+        System.out.println();
+
         // 책장
         BookShelf bookShelf=new BookShelf(10);
         bookShelf.appendBook(new Book("클린코드", "기술", 2008, 30000));
