@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class IDCardFactory extends Factory {
-    private int serial = 100;   // 정수 기본 데이터 타입
-    private Map<Integer, String> database=new HashMap<>();  // 정수 객체
+    private int serial = 100;   // int : 기본 데이터 타입
+    private Map<Integer, String> database=new HashMap<>();  // Integer : 정수 객체
 
     protected synchronized Product createProduct(String owner) {
         return new IDCard(owner, serial++); // 첫 생성 시 100 -> 이후 생성부터 101,102,...

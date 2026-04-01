@@ -8,7 +8,7 @@ public class IDCard extends Product {
     IDCard(String owner) {
         // 부모의 인자 없는 생성자 호출
         // super(); -> 생략 가능
-        // supaer("x","y");
+        // super("x","y");
         System.out.println(owner + "의 카드를 만듭니다.");
         this.owner = owner;
     }
