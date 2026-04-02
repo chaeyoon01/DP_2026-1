@@ -2,7 +2,7 @@ package practice.ch05;
 
 public enum Singleton2 {
     // 상수
-    INSTANCE;   // 클래스 로드 시 싱글톤 객체 하나 생성
+    INSTANCE1;   // 클래스 로드 시 싱글톤 객체 하나 생성
 
     // 메소드
     public void hello(){
