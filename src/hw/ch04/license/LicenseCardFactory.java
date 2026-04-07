@@ -29,4 +29,4 @@ public class LicenseCardFactory extends Factory {
         System.out.println(product + "을 등록했습니다.");
         System.out.println();
     }
-}
+} 
