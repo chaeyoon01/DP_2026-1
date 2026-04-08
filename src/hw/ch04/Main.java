@@ -7,7 +7,7 @@ import hw.ch04.license.LicenseCardFactory;
 
 public class Main {
     public static void main(String[] args){
-         System.out.println("20240936 신채윤");
+        System.out.println("20240936 신채윤");
         System.out.println();
 
         System.out.println("***Step 1 테스트 : IDCard 정보 확장***");
