@@ -26,6 +26,6 @@ public class UnderlinePen implements Product {
 
     @Override
     public Product createCopy() {
-        return new UnderlinePen(this);
+        return new UnderlinePen(this);  // 자기 복제 후 복사 생성자 호출
     }
 }
