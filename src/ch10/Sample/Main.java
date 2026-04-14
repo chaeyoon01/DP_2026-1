@@ -2,15 +2,20 @@ package ch10.Sample;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 2) {
+
+        if (args.length != 2) {     // 명령행 인자의 개수가 2개가 아니면 사용법을 표시하고 종료
             System.out.println("Usage: java Main randomseed1 randomseed2");
             System.out.println("Example: java Main 314 15");
             System.exit(0);
         }
+
+        // 명령행 인자 : 문자열 -> 숫자로 변환
         int seed1 = Integer.parseInt(args[0]);
         int seed2 = Integer.parseInt(args[1]);
+
         Player player1 = new Player("KIM", new WinningStrategy(seed1));
         Player player2 = new Player("LEE", new ProbStrategy(seed2));
+        
         for (int i = 0; i < 10000; i++) {
             Hand nextHand1 = player1.nextHand();
             Hand nextHand2 = player2.nextHand();
