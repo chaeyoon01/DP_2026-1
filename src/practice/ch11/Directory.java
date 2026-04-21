@@ -19,7 +19,7 @@ public class Directory extends Entry {
     @Override
     public int getSize() {  // 모든 자식의 크기를 더함
         int size = 0;
-        for (Entry entry: directory) {  // 확장된 for문 -> (원소 변수 : 컬렉션) 형식
+        for (Entry entry : directory) {  // 확장된 for문 -> (원소 변수 : 컬렉션) 형식
             size += entry.getSize();    // 재귀적 호출
         }
         return size;
