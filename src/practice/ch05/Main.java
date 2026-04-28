@@ -18,7 +18,7 @@ public class Main {
         System.out.println("s3의 값 : "+s3);
 
         // Singleton2 객체 사용
-        Singleton2 s4=Singleton2.INSTANCE;
+        Singleton2 s4=Singleton2.INSTANCE1;
         s4.hello(); // Singleton2 객체의 메소드 호출
     }
 }
