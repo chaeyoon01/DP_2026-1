@@ -3,7 +3,7 @@ package ch12.A1;
 public class UpDownBorder extends Border {
     private char borderChar;  // 장식 문자 
 
-    // 내용물이 될 Display와 장식 문자를 지정
+    // 생성자 : 내용물이 될 Display와 장식 문자를 지정
     public UpDownBorder(Display display, char ch) {
         super(display);
         this.borderChar = ch;

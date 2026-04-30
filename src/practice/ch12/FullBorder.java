@@ -25,7 +25,7 @@ public class FullBorder extends Border {
         } else if (row == display.getRows() + 1) {                 	// 하단 테두리
             return "+" + makeLine('-', display.getColumns()) + "+";
         } else {                                                    		// 기타
-            return "|" + display.getRowText(row - 1) + "|";
+            return "|" + display.getRowText(row - 1) + "|";     // 재귀적 구조
         }
     }
 

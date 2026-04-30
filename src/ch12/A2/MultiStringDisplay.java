@@ -6,17 +6,17 @@ import java.util.List;
 public class MultiStringDisplay extends Display {
     // 표시 문자열 저장 장소
     private List<String> body = new ArrayList<>();
-    // 표시 문자열 최대 문자 수 
+    // 표시 문자열 최대 문자 수 = 현재 제일 긴 문자열의 길이 
     private int columns = 0;
 
     // 문자열 추가 
     public void add(String msg) {
         body.add(msg);
-        if (columns < msg.length()) {
+        if (columns < msg.length()) {   // 더 긴 문자열이 추가될 경우
             // 최대 문자 수 갱신
             columns = msg.length();
         }
-        updatePadding();
+        updatePadding();    // 제일 긴 문자열에 맞춰 나머지 문자열의 오른쪽 끝에 공백 처리
     }
 
     @Override
@@ -36,11 +36,12 @@ public class MultiStringDisplay extends Display {
 
     // 표시 문자열 오른쪽 끝에 채울 공백을 필요에 따라 늘린다
     private void updatePadding() {
+        // 현재 추가된 모든 문자열의 수만큼 반복
         for (int row = 0; row < body.size(); row++) {
             String line = body.get(row);
             int padding = columns - line.length();
-            if (padding > 0) {
-                body.set(row, line + spaces(padding));
+            if (padding > 0) {  // 현재 문자열 < 제일 긴 문자열
+                body.set(row, line + spaces(padding));  // line : 현재 문자열
             }
         }
     }
