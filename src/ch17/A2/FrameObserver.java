@@ -28,21 +28,25 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
         }
     }
 
-    // GraphCanvas는 통지된 수를 원그래프로 표시하는 static 클래스 
+    // GraphCanvas는 통지된 수를 원그래프로 표시하는 static 클래스(내부 클래스)
     static class GraphCanvas extends Canvas implements Observer {
         private int number;
 
         @Override
         public void update(NumberGenerator generator) {
             number = generator.getNumber();
-            repaint();
+            repaint();  // 도화지를 clear하고 paint() 메소드 호출
         }
 
         public void paint(Graphics g) {
             int width = getWidth();
             int height = getHeight();
+
+            // 흰색 원
             g.setColor(Color.white);
             g.fillArc(0, 0, width, height, 0, 360);
+
+            // 빨간색 원의 호
             g.setColor(Color.red);
             g.fillArc(0, 0, width, height, 90, - number * 360 / 50);
         }

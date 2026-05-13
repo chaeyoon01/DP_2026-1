@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "ch17.A2.Main",
+            "projectName": "DP_2026-1_bd2e8b73"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "practice.ch17.Main",
             "projectName": "DP_2026-1_bd2e8b73"
         },
