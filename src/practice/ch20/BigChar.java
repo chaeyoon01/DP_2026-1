@@ -21,6 +21,7 @@ public class BigChar {
                 sb.append(line);
                 sb.append("\n");
             }
+            
             this.fontdata = sb.toString();
         } catch (IOException e) {
             this.fontdata = charname + "?";
