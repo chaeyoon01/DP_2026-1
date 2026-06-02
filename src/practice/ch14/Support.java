@@ -15,7 +15,7 @@ public abstract class Support {
         return next;    // 인자로 들어온 뒷사람을 반환
     }
 
-    // 트러블 해결 절차를 결정한다
+    // 트러블 해결 절차를 결정한다 -> 템플릿 메소드 패턴
     public void support(Trouble trouble) {
         if (resolve(trouble)) { // 내가 해결 시도
             done(trouble);  // 해결했다고 선언

@@ -20,9 +20,9 @@ public abstract class Support {
         for (Support obj = this; true; obj = obj.next) {
             if (obj.resolve(trouble)) {
                 obj.done(trouble);
-                break;
-            } else if (obj.next == null) {
-                obj.fail(trouble);
+                break;  // 루프를 빠져나감
+            } else if (obj.next == null) {  // 뒷사람이 없는 경우
+                obj.fail(trouble);  // 실패
                 break;
             }
         }
