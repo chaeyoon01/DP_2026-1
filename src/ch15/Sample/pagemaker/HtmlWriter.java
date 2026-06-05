@@ -31,7 +31,7 @@ public class HtmlWriter {
 
     // 링크 출력
     public void link(String href, String caption) throws IOException {
-        paragraph("<a href=\"" + href + "\">" + caption + "</a>");
+        paragraph("<a href=\"" + href + "\">" + caption + "</a>");  // 큰 따옴표 내부에 큰 따옴표 사용 시 백슬래시 사용
     }
 
     // 이메일 주소 출력 
